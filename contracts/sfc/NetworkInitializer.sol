@@ -28,6 +28,7 @@ contract NetworkInitializer {
         consts.updateOfflinePenaltyThresholdBlocksNum(1000);
         consts.updateTargetGasPowerPerSecond(2000000);
         consts.updateGasPriceBalancingCounterweight(3600);
+        consts.updateMinTrimGasPrice(5e11);
         consts.transferOwnership(_owner);
 
         SFCI(_sfc).initialize(sealedEpoch, totalSupply, _auth, _lib, address(consts), _owner);

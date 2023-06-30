@@ -13,17 +13,13 @@ library GP {
         return x;
     }
 
-    function trimMinGasPrice(uint256 x) internal pure returns (uint256) {
+    function trimMinGasPrice(uint256 x, uint256 minTrimPrice) internal pure returns (uint256) {
         if (x > 1000000 * 1e9) {
             return 1000000 * 1e9;
         }
-        if (x < 1e9) {
-            return 1e9;
+        if (x < minTrimPrice) {
+            return minTrimPrice;
         }
         return x;
-    }
-
-    function initialMinGasPrice() internal pure returns (uint256) {
-        return 100 * 1e9;
     }
 }

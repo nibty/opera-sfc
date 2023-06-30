@@ -48,7 +48,7 @@ contract SFC is SFCBase, Version {
         libAddress = lib;
         c = ConstantsManager(_c);
         totalSupply = _totalSupply;
-        minGasPrice = GP.initialMinGasPrice();
+        minGasPrice = c.minTrimGasPrice();
         getEpochSnapshot[sealedEpoch].endTime = _now();
     }
 
@@ -186,7 +186,7 @@ contract SFC is SFCBase, Version {
         // apply the ratio
         uint256 newMinGasPrice = minGasPrice * gasPriceDeltaRatio / Decimal.unit();
         // limit the max/min possible minGasPrice
-        newMinGasPrice = GP.trimMinGasPrice(newMinGasPrice);
+        newMinGasPrice = GP.trimMinGasPrice(newMinGasPrice, c.minTrimGasPrice());
         // apply new minGasPrice
         minGasPrice = newMinGasPrice;
     }

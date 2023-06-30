@@ -86,6 +86,7 @@ contract UnitTestNetworkInitializer {
         consts.updateOfflinePenaltyThresholdBlocksNum(1000);
         consts.updateTargetGasPowerPerSecond(2000000);
         consts.updateGasPriceBalancingCounterweight(6 * 60 * 60);
+        consts.updateMinTrimGasPrice(5e11);
         consts.transferOwnership(_owner);
 
         SFCUnitTestI(_sfc).initialize(sealedEpoch, totalSupply, _auth, _lib, address(consts), _owner);
