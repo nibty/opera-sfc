@@ -50,6 +50,16 @@ module.exports = {
             network_id: '*', // Any network (default: none)
             defaultEtherBalance: 500,
         },
+
+        'x1-testnet': {
+            network_id: 204005,
+            verify: {
+                apiUrl: 'https://explorer.x1-testnet.infrafc.org/api',
+                apiKey: 'MY_API_KEY',
+                explorerUrl: 'https://explorer.x1-testnet.infrafc.org/address',
+            },
+        },
+
         // Another network with more advanced options...
         // advanced: {
         // port: 8777,             // Custom port
@@ -98,5 +108,5 @@ module.exports = {
             },
         },
     },
-    plugins: ['solidity-coverage'],
+    plugins: ['solidity-coverage', 'truffle-plugin-verify'],
 };
