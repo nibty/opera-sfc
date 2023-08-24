@@ -33,6 +33,7 @@ contract ConstantsManager is Ownable {
     uint256 public offlinePenaltyThresholdTime;
     uint256 public targetGasPowerPerSecond;
     uint256 public gasPriceBalancingCounterweight;
+    uint256 public minTrimGasPrice;
 
     address private secondaryOwner_erased;
 
@@ -132,5 +133,11 @@ contract ConstantsManager is Ownable {
         require(v >= 100, "too small value");
         require(v <= 10 * 86400, "too large value");
         gasPriceBalancingCounterweight = v;
+    }
+
+    function updateMinTrimGasPrice(uint256 v) onlyOwner external {
+        require(v >= 1, "too small value");
+        require(v <= 10e12, "too large value");
+        minTrimGasPrice = v;
     }
 }

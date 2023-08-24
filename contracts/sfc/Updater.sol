@@ -60,6 +60,7 @@ contract Updater {
         consts.updateOfflinePenaltyThresholdBlocksNum(1000);
         consts.updateTargetGasPowerPerSecond(2000000);
         consts.updateGasPriceBalancingCounterweight(3600);
+        consts.updateMinTrimGasPrice(5e11);
         consts.transferOwnership(owner);
 
         VoteBookI(voteBook).initialize(owner, govTo, 30);
