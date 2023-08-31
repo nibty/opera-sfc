@@ -24,6 +24,13 @@
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+const dotenv = require('dotenv');
+
+dotenv.config();
+
+console.log(process.env.PRIVATE_KEY);
+
 module.exports = {
     /**
    * Networks define how you connect to your ethereum client and let you set the
@@ -58,6 +65,14 @@ module.exports = {
                 apiKey: 'MY_API_KEY',
                 explorerUrl: 'https://explorer.x1-testnet.infrafc.org/address',
             },
+        },
+
+        fakenet: {
+            network_id: 4003,
+            provider: () => new HDWalletProvider({
+                privateKeys: [process.env.PRIVATE_KEY],
+                providerOrUrl: 'http://127.0.0.1:8545',
+            }),
         },
 
         // Another network with more advanced options...
