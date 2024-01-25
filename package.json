@@ -1,6 +1,6 @@
 {
-  "name": "opera-sfc",
-  "version": "3.0.4-rc.5",
+  "name": "@faircrypto/x1-sfc",
+  "version": "3.0.4-rc.5.x1-1",
   "description": "Special Fee Contract",
   "scripts": {
     "lint:js": "eslint \"test/*.js\"",
@@ -35,25 +35,20 @@
     "solhint": "^3.3.4",
     "solidity-coverage": "^0.7.15",
     "truffle-flattener": "^1.5.0",
-    "truffle-plugin-verify": "^0.6.5",
+    "truffle-plugin-verify": "^0.6.7",
     "web3-utils": "^1.2.1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Fantom-foundation/opera-sfc.git"
+    "url": "https://github.com/nibty/x1-sfc.git"
   },
   "author": "Fantom Foundation",
   "license": "MIT",
   "dependencies": {
-    "@nomiclabs/hardhat-ethers": "^2.2.1",
-    "@nomiclabs/hardhat-etherscan": "^3.1.3",
-    "@nomiclabs/hardhat-truffle5": "^2.0.7",
-    "@nomiclabs/hardhat-waffle": "^2.0.3",
-    "@nomiclabs/hardhat-web3": "^2.0.0",
-    "@openzeppelin/test-helpers": "^0.5.16",
-    "@truffle/hdwallet-provider": "^2.1.14",
-    "dotenv": "^16.0.3",
-    "hardhat-contract-sizer": "^2.6.1",
-    "npm": "^7.6.3"
-  }
+
+  },
+  "files": [
+    "/build/contracts/*.json",
+    "/contracts/**/*.sol"
+  ]
 }

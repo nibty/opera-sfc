@@ -13,9 +13,9 @@ contract NetworkInitializer {
 
         ConstantsManager consts = new ConstantsManager();
         consts.initialize();
-        consts.updateMinSelfStake(500000 * 1e18);
+        consts.updateMinSelfStake(100000 * 1e18);
         consts.updateMaxDelegatedRatio(16 * Decimal.unit());
-        consts.updateValidatorCommission((15 * Decimal.unit()) / 100);
+        consts.updateValidatorCommission((1 * Decimal.unit()) / 100);
         consts.updateBurntFeeShare((20 * Decimal.unit()) / 100);
         consts.updateTreasuryFeeShare((10 * Decimal.unit()) / 100);
         consts.updateUnlockedRewardRatio((30 * Decimal.unit()) / 100);
@@ -28,7 +28,7 @@ contract NetworkInitializer {
         consts.updateOfflinePenaltyThresholdBlocksNum(1000);
         consts.updateTargetGasPowerPerSecond(2000000);
         consts.updateGasPriceBalancingCounterweight(3600);
-        consts.updateMinTrimGasPrice(5e11);
+        consts.updateMinTrimGasPrice(1e9);
         consts.transferOwnership(_owner);
 
         SFCI(_sfc).initialize(sealedEpoch, totalSupply, _auth, _lib, address(consts), _owner);

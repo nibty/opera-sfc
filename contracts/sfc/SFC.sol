@@ -172,7 +172,6 @@ contract SFC is SFCBase, Version {
         }
     }
 
-
     function _sealEpoch_minGasPrice(uint256 epochDuration, uint256 epochGas) internal {
         // change minGasPrice proportionally to the difference between target and received epochGas
         uint256 targetEpochGas = epochDuration * c.targetGasPowerPerSecond() + 1;
