@@ -46,8 +46,7 @@
   },
   "author": "Fantom Foundation",
   "license": "MIT",
-  "dependencies": {
-  },
+  "dependencies": {},
   "files": [
     "/build/contracts/*.json",
     "/contracts/**/*.sol"
